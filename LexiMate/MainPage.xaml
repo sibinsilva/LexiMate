@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LexiMate.MainPage"
+             BackgroundColor="White">
+    <ContentPage.Content>
+        <ScrollView>
+            <VerticalStackLayout HorizontalOptions="Fill" VerticalOptions="StartAndExpand" Spacing="20" Padding="20">
+                <Label x:Name="lbl_NoInternet" BackgroundColor="Red" TextColor="White" HorizontalTextAlignment="Center" HorizontalOptions="FillAndExpand" Padding="10"/>
+                <Label x:Name="Header" Text="LexiMate" TextColor="#2196F3" FontSize="50" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" FontAttributes="Bold" />
+                <Image x:Name="imgBanner" Aspect="AspectFit" />
+                <Image x:Name="imgSelected" HeightRequest="200" Aspect="AspectFit" Margin="10" />
+                <Button x:Name="takePhoto" Text="Capture Photo" BackgroundColor="#2196F3" Padding="20" CornerRadius="20" TextColor="White" VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" Clicked="takePhoto_Clicked"/>
+                <Button x:Name="pickPhoto" Text="Upload Image" BackgroundColor="#2196F3" Padding="20" CornerRadius="20" TextColor="White" VerticalOptions="CenterAndExpand" 
+                        HorizontalOptions="CenterAndExpand" Clicked="pickPhoto_Clicked"/>
+                <ActivityIndicator x:Name="activity" IsRunning="False" HorizontalOptions="Center" VerticalOptions="CenterAndExpand" Margin="20" />
+                <Label Text="Image Text :" x:Name="lblImageText" IsVisible="false" TextColor="Black" FontSize="Large" />
+                <Frame x:Name="frmImgText" IsVisible="False" BorderColor="Black" VerticalOptions="FillAndExpand" Margin="10" BackgroundColor="Transparent" Padding="10">
+                    <Label x:Name="lblResult" TextColor="Black" />
+                </Frame>
+                <Label x:Name="lblLang" Text="Detected Language :" IsVisible="false" TextColor="Black" FontSize="Large" />
+                <Frame x:Name="frmResult" IsVisible="false" BorderColor="Black" VerticalOptions="FillAndExpand" Margin="10" BackgroundColor="Transparent" Padding="10">
+                    <VerticalStackLayout>
+                        <Label x:Name="DetectedLanguageLabel" TextColor="Black" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Label x:Name="lblTranslated" Text="Translated Text :" IsVisible="false" TextColor="Black" FontSize="Large" />
+                <Frame x:Name="frmTranslatedResult" IsVisible="false" BorderColor="Black" VerticalOptions="FillAndExpand" Margin="10" BackgroundColor="Transparent" Padding="10">
+                    <VerticalStackLayout>
+                        <Label x:Name="TranslatedTextLabel" TextColor="Black" />
+                    </VerticalStackLayout>
+                </Frame>
+                <Button x:Name="Play" Text="Listen" BackgroundColor="#2196F3" WidthRequest="80" HeightRequest="80" CornerRadius="40" VerticalOptions="Center" HorizontalOptions="Center" IsVisible="false" Clicked="Play_Clicked"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
